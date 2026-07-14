@@ -2,7 +2,7 @@
 <div align="center">
   <h1>JTBD Innovation OS</h1>
   <p><strong>企业级 AI 用户洞察与产品创新操作系统</strong></p>
-  <p>基于 Jobs-to-be-Done 2.0 方法论的 Multi-Agent 产品创新工作流</p>
+  <p>基于 Jobs-to-be-Done 方法论的 Multi-Agent 产品创新工作流</p>
 </div>
 
 ---
