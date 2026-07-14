@@ -1,0 +1,87 @@
+# =============================================================================
+# JTBD Innovation OS - Shared Context
+# =============================================================================
+# All agents read from and write to this shared state, ensuring:
+# - No redundant analysis (agents reference, not repeat)
+# - Traceability (every insight links to evidence)
+# - Iterative refinement (hypothesis -> validate -> revise)
+
+shared_context:
+
+  research_context:
+    goal: null                  # need_discovery | competitive_analysis | concept_validation | innovation_exploration
+    scope: null                 # product_category | user_segment | market
+    constraints: null           # time_budget | sample_limits
+    workflow_path: null          # switch_first | job_first | competition_first
+    hypothesis: []               # List of hypotheses to validate
+    iteration_cycle: 0           # Hypothesis -> Validate -> Revise count
+
+  data_quality:
+    sources: []                  # List of {type, sample_size, time_range, user_types}
+    risks: []                    # List of {risk_type, severity, description}
+    recommendations: []          # Analysis recommendations
+    confidence: medium            # high | medium | low
+
+  observations:
+    items: []                    # List of {user_quote, observed_behavior, gap_analysis, hidden_need, strength}
+
+  personas:
+    items: []                    # List of {id, name, identity, behavior, motivation, social_context, evidence}
+
+  contexts:
+    items: []                    # List of {id, name, when, where, who, before_state, after_state, emotion}
+
+  switch_analyses:
+    items: []                    # List of {user_profile, old_solution, new_solution, timeline, forces}
+
+  jobs:
+    items: []                    # List of {jtbd_id, when, motivation, outcome, functional, social, emotional, evidence, frequency, confidence, 5t_check}
+
+  job_hierarchies:
+    items: []                    # List of {job_id, aspiration, big_job, small_job, micro_job}
+
+  job_maps:
+    items: []                    # List of {job_id, steps: [{step_name, activity, pain_points, desired_outcome, evidence}]}
+
+  needs:
+    items: []                    # List of {need_id, statement, category, subcategory, intensity, frequency, evidence}
+
+  desired_outcomes:
+    items: []                    # List of {outcome_id, job_id, direction, object, context, metric, full_statement, evidence}
+
+  competition:
+    direct_solutions: []         # List of {solution, strengths, weaknesses, users}
+    indirect_alternatives: []    # List of {alternative, why_used, gap}
+    non_consumption: []          # List of {scenario, barrier, potential}
+    switching_costs: []          # List of {barrier, severity}
+
+  opportunities:
+    items: []                    # List of {opp_id, job_id, dimension_scores, weighted_score, category, evidence_strength}
+
+  innovation_classification:
+    type: null                   # incremental | breakthrough | disruptive | business_model | service
+    rationale: null              # Why this classification
+    impact: null                 # Estimated market/organizational impact
+
+  go_nogo:
+    decision: null               # go | need_more_research | no_go
+    evidence_confidence: null    # 0.0 - 1.0
+    research_saturation: null    # low | medium | high
+    business_value_case: null    # Summary
+    rationale: null              # Decision rationale
+
+  innovation_brief:
+    current_job: null            # Core JTBD summary
+    evidence_summary: null       # Key evidence
+    opportunity_summary: null    # Scored opportunities
+    recommendation: null         # Product/strategy recommendation
+    risk_factors: []             # Key risks
+
+  validation_results:
+    evidence_check: {}           # from evidence_checker
+    jtbd_quality_check: {}       # from jtbd_quality_checker
+    context_check: {}            # from context_validator
+    need_check: {}               # from need_validator
+    outcome_check: {}            # from outcome_validator
+    switch_check: {}             # from switch_validator
+    opportunity_check: {}        # from opportunity_validator
